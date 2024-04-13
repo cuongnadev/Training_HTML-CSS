@@ -1,0 +1,23 @@
+
+//color
+$color:#E5F4F2;
+$primary-color : #F8D57E;
+$secondary-color : #F8F9FF;
+$text-color-primary:#2D2D2D;
+$text-color-secondary:#009379;
+$text-color-anima:#36F;
+$button-color-primary : #009379;
+$button-color-secondary:#FFF;
+$color-text-active:red;
+
+//responsive
+$small:429px;
+$mobiles:calc($small - 1px);
+$medium: 768px;
+$extra-large:1200px;
+$desktop: calc($extra-large + 0px);
+$tablet: calc($extra-large - 1px);
+
+//font
+$primary-font : JosefinSans;
+$secondary-font : PoppinsRegular;
