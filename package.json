@@ -13,6 +13,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0",
+    "parcel-bundler": "^1.12.5",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
     "sass": "^1.74.1"
