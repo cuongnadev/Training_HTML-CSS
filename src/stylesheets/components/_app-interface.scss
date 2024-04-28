@@ -1,14 +1,14 @@
 @use '../abstracts/' as *;
 
 .app-interface {
-    margin: auto;
+    margin: 0 auto 120px auto;
     width: 1294px;
     height: 883px;
     flex-shrink: 0;
 }
 .app-interface__slider {
     @include flex($display: flex,$direction: column,$align: center,
-    $justify: center,$wrap: false,$gap: 60px);
+    $justify: center,$wrap: false,$gap: 40px);
 }
 .app-interface__sider-main {
     @include flex($display: flex,$direction: false,$align: center,
