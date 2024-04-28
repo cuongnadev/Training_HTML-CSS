@@ -1,0 +1,89 @@
+@use '../abstracts/' as *;
+.download-app {
+    margin: 0 auto 120px auto;
+    width: 1166px;
+    height: 506px;
+    @include flex($display: flex,$direction: false,$align: center,
+    $justify: space-between,$wrap: false,$gap: 80px);
+}
+.download-app__main {
+    height: 100%;
+}
+.download-app__heading .saction-heading,
+.download-app__heading .saction-text{
+    text-align: start;
+}
+.download-app__heading .saction-heading {
+    margin-top: 17px;
+}
+.download-app__heading .saction-text {
+    margin-bottom: 40px;
+    width: 570px;
+    height: 87px;
+    flex-shrink: 0;
+}
+.download-app__img--top {
+    width: 516px;
+    height: 480px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.download-app__links {
+    @include flex($display: flex,$direction: false,$align: center,
+    $justify: start,$wrap: false,$gap: 25px);
+    margin-bottom: 59px;
+}
+.download-app__interactions {
+    @include flex($display: flex,$direction: false,$align: center,
+    $justify: start,$wrap: false,$gap: 30px);
+}
+.download-app__interaction-item {
+    background-color: $color-primary;
+    width: 170px;
+    height: 176px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+}
+.download-app__img {
+    width: 516px;
+    height: 100%;
+    position: relative;
+}
+.download-app__img--top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.download-app__img--bottom {
+    width: 212px;
+    height: 71px;
+    position: absolute;
+    bottom: -10px;
+    left: 45%;
+    transform: translateX(-50%);
+    fill: var(--White, #FFF);
+    filter: drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.10));
+}
+.download-app__interaction-item {
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: center,$wrap: false,$gap: 18px);
+}
+.download-app__interaction-icon {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+}
+.download-app__interaction-icon:hover,
+.download-app__link-item:hover {
+    transform: scale(1.05);
+}
+.download-app__interaction-quantity {
+    @include font($font-family:$primary-font,$font-size: 25px,$font-weight:600,$font-style:normal,$line-height: normal,$color:$color-white);
+    text-transform: uppercase;
+}
+.download-app__interaction-title {
+    @include font($font-family:$primary-font,$font-size: 20px,$font-weight:600,$font-style:normal,$line-height: 30px,$color:$color-white);
+    text-transform: uppercase;
+}
