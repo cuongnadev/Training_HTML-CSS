@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+
+.use-app {
+    position: relative;
+    width: 100%;
+    height: 682px;
+}
+.use-app__content {
+    position: absolute;
+    top: 42px;
+    width: 100%;
+    height: 477px;
+    background: url(../assets/images/Rectangle-15.png);
+}
+.use-app__video {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 770px;
+    height: 319px;
+    flex-shrink: 0;
+    background: linear-gradient(0deg, rgba(145, 139, 249, 0.4) 0%, rgba(145, 139, 249, 0.4) 100%), url(../assets/images/Image.png) lightgray 50% / cover no-repeat;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.24);
+}
+.use-app__heading .saction-heading,
+.use-app__heading .saction-text {
+    color: $color-white;
+}
+.use-app__video-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
