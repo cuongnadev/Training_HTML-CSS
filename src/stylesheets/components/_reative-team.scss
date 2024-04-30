@@ -1,0 +1,10 @@
+@use '../abstracts/' as *;
+.reative-team {
+    margin: 0 auto 120px auto;
+    width: 1170px;
+    height: 781px;
+}
+.reative-team__members {
+    @include flex($display: flex,$direction: false,$align: center,
+    $justify: center,$wrap: false,$gap: 30px);
+}
