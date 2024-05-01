@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.blog {
+    margin: 0 auto 248px auto;
+    width: 1170px;
+    height: 701px;
+}
+.blog__cards {
+    @include flex($display: flex,$direction: false,$align: center,
+    $justify: center,$wrap: false,$gap: 30px);
+}
