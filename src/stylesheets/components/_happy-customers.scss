@@ -1,0 +1,52 @@
+@use '../abstracts/' as *;
+
+.customers {
+    padding-top: 1px;
+    width: 100%;
+    height: 876px;
+    flex-shrink: 0;
+    background: url(../assets/images/Rectangle-16.png);
+}
+.customers__heading .saction-heading,
+.customers__heading .saction-text {
+    color: $color-white;
+}
+.customers__sliders {
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: center,$wrap: false,$gap: 60px);
+}
+.customers__sliders-img {
+    position: relative;
+    width: 1171px;
+    height: 357px;
+}
+.business-card {
+    position: absolute;
+}
+.business-card:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.business-card:first-child,
+.business-card:last-child {
+    position: absolute;
+    width: 570px;
+    height: 330px;
+}
+.business-card:first-child .business-card__text,
+.business-card:last-child .business-card__text {
+    width: 495px;
+    height: 64px;
+}
+.business-card:first-child {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.business-card:last-child {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
