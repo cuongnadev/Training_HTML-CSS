@@ -5,10 +5,10 @@
 .header__container {
     overflow: hidden; // note
     @include flex($display: flex,$direction: column,$align: center,
-    $justify: center,$wrap: false,$gap: false);
+    $justify: start,$wrap: false,$gap: false);
     width: 100%;
     height: 1024px;
-    background: url(../assets/images/background.png) lightgray 50% / cover no-repeat;
+    background: url(../assets/images/background.png) ;
     flex-shrink: 0;
 }
 .header__menu {
@@ -18,6 +18,7 @@
     height: 114px;
     flex-shrink: 0;
     margin-top: 35px;
+    transition: 0.1s linear;
 }
 .header__top {
     @include flex($display: flex,$direction: false,$align: false,
@@ -102,6 +103,12 @@
     ) ;
     flex: 1;
 }
+.menu-bar {
+    margin-left: 18px;
+}
+.menu-bar:hover {
+    transform: scale(1.1);
+}
 .menu__nav--list {
     @include flex( $display: flex,$direction: false,$align: center,
         $justify: space-between,$wrap: false,$gap: 40px
@@ -169,7 +176,6 @@
     height: 535px;
     border: 18px solid #7572FF;
     flex-shrink: 0;
-
 }
 .hero__title {
     padding-top: 40px;
@@ -195,6 +201,197 @@
         $justify: false,$wrap: false,$gap: 14px
     ) ;
 }
+.hero__download--chplay:hover,
+.hero__download--appstore:hover {
+    transform: scale(1.05);
+}
 .hero__img {
     transform: translateX(124px);
 } 
+// desktop
+@media (min-width: 1201px){
+    .menu-bar {
+        display: none;
+    }
+}
+
+// taplet large
+@media (min-width: 992px) and (max-width: 1200.5px) {
+    .header__menu,
+    .header__hero {
+        width: 952px;
+    }
+    .menu__nav--list {
+        display: none;
+    }
+    .hero__upper-frame, 
+    .hero__lower-frame,
+    .hero__img {
+        width: 496px;
+    }
+    .hero__upper-frame {
+        height: 396px;
+    }
+    .hero__lower-frame {
+        top: -40px;
+        right: -40px;
+        height: 475px;
+    }
+    .hero__title {
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    .hero__para {
+        width: 430px;
+    }
+}
+
+// tablet mini
+@media (min-width: 768px) and (max-width: 991.5px) {
+    .header__menu,
+    .header__hero {
+        width: 668px;
+    }
+    .menu__nav {
+        margin-top: 20px;
+    }
+    .menu__nav--list {
+        display: none;
+    }
+    .hero__upper-frame {
+        width: 356px;
+        height: 318px;
+    }
+    .hero__lower-frame {
+        width: 375px;
+        height: 381px;
+        top: -32px;
+        right: -32px;
+    }
+    .hero__title {
+        margin: 0 0 0 18px;
+        padding-top: 14px;
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    .hero__para {
+        margin: 6px auto 23px 18px;
+        width: 330px;
+        height: 92px;
+    }
+    .hero__sub-title {
+        margin-left: 18px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .hero__download {
+        margin-left: 18px;
+    }
+    .header__hero {
+        margin-top: 220px;
+    }
+    .hero__img {
+        width: 378px;
+        height: 423px;
+        transform: translateX(90px);
+    } 
+}
+
+// mobile
+@media  (max-width: 767.5px) {
+    .header__container {
+        height: 1227px;
+    }
+    .header__menu,
+    .header__hero {
+        width: 343px;
+    }
+    .header__menu {
+        margin-top: 0;
+    }
+    .header__hero {
+        @include flex( $display: flex,$direction: column,$align: start,
+            $justify: center,$wrap: false,$gap: 60px
+        ) ;
+    }
+    .menu__nav {
+        height: 70px;
+    }
+    .menu__nav--menu {
+        height: 40px;
+    }
+    .menu-bar {
+        margin-left: 8px;
+    }
+    .menu__nav--list,
+    .menu__contact--email,
+    .menu__contact--call,
+    .menu__social {
+        display: none;
+    }
+    .menu__nav--logo {
+        width: 100px;
+        height: 60px;
+    }
+    .menu__nav--logo-img {
+        width: 79px;
+        height: 12px;
+    }
+    .menu__button--download {
+        width: 76px;
+        height: 34px;
+        margin-right: 4px;
+    }
+    .menu__button--download h6 {
+        font-size: 10px;
+    }
+    .hero__upper-frame {
+        width: 323px;
+        height: 318px;
+   
+    }
+    .hero__lower-frame {
+        width: 323px;
+        height: 358px;
+        top: -20px;
+        right: -20px;
+        border: 10px solid #7572FF;
+    }
+    .hero__title {
+        width: 262px;
+        height: 78px;
+        margin: 0 0 0 18px;
+        padding-top: 14px;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .hero__para {
+        margin: 10px auto 20px 18px;
+        width: 293px;
+        height: 114px;
+    }
+    .hero__sub-title {
+        margin: 0 0 18px 18px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .hero__download {
+        margin-left: 18px;
+    }
+    .hero__download--chplay,
+    .hero__download--appstore {
+        width: 108.191px;
+        height: 34.127px;
+    }
+    .header__hero {
+        margin-top: 118px;
+    }
+    .hero__img {
+        width: 466px;
+        height: 521px;
+        transform: translateX(22px);
+    } 
+}
+    
