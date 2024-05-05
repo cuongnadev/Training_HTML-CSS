@@ -25,14 +25,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../assets/images/android-smartphone.png) transparent 50% / cover no-repeat;
     z-index: 1;
 }
 .about-saction__img--bottom {
     position: absolute;
-    bottom: -40px;
-    left: 50px;
-    width: 250px;
+    bottom: -35px;
+    left: 55px;
+    width: 240px;
     height: 100px;
     fill: $color-white;
     filter: drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.10));
@@ -41,3 +40,120 @@
     @include flex($display: flex,$direction: column,$align: center,
     $justify: center,$wrap: false,$gap: 40px);
 }
+
+/* responsive */
+// desktop
+@media (min-width: 1201px){
+    
+}
+
+// taplet large
+@media (min-width: 992px) and (max-width: 1200.5px) {
+    .about-saction {
+        width: 952px;
+    }
+    .about-saction__toasts .toast {
+        width: 468px;
+    }
+    .about-saction__toasts .toast__body {
+        margin-top: 20px;
+    }
+    .about-saction__toasts .toast__text {
+        font-size: 14px;
+    }
+}
+
+// tablet mini
+@media (min-width: 768px) and (max-width: 991.5px) {
+    .about-saction {
+        width: 689px;
+        height: 569px;
+    }
+    .about-saction__img {
+        width: 238px;
+        height: 324px;
+    }
+    .about-saction__img--top {
+        top: 10px;
+        left: 5px;
+    }
+    .about-saction__img--bottom {
+        bottom: -60px;
+        left: -10px;
+    }
+    .about-saction__toasts {
+        gap: 20px;
+    }
+    .about-saction__toasts .toast {
+        width: 391px;
+        height: 110px;
+    }
+    .about-saction__toasts .toast__body {
+        margin-top: 20px;
+    }
+    .about-saction__toasts .toast__text {
+        width: 276px;
+        height: 49px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+
+// mobile
+@media  (max-width: 767.5px) {
+    .about-saction {
+        width: 343px;
+        height: 935px;
+        margin-bottom: 92px;
+    }
+    .about-saction__heading .saction-heading {
+        margin-top: 60px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .about-saction__heading .saction-text {
+        width: 306px;
+        height: 70px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    .about-saction__content {
+        height: 774px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-saction__img {
+        width: 238px;
+        height: 324px;
+    }
+    .about-saction__img--top {
+        width: 100%;
+        top: 10px;
+        left: 4px;
+    }
+    .about-saction__img--bottom {
+        bottom: -60px;
+        left: -10px;
+    }
+    .about-saction__toasts {
+        gap: 20px;
+    }
+    .about-saction__toasts .toast {
+        width: 343px;
+        height: 110px;
+    }
+    .about-saction__toasts .toast__body {
+        margin-top: 20px;
+    }
+    .about-saction__toasts .toast__text {
+        width: 276px;
+        height: 49px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+} 

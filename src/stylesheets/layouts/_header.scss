@@ -308,7 +308,7 @@
         width: 343px;
     }
     .header__menu {
-        margin-top: 0;
+        margin-top: -5px;
     }
     .header__hero {
         @include flex( $display: flex,$direction: column,$align: start,
@@ -386,10 +386,10 @@
         height: 34.127px;
     }
     .header__hero {
-        margin-top: 118px;
+        margin-top: 98px;
     }
     .hero__img {
-        width: 466px;
+        width: 443px;
         height: 521px;
         transform: translateX(22px);
     } 
