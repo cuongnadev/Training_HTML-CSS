@@ -8,3 +8,143 @@
     @include flex($display: flex,$direction: false,$align: center,
     $justify: center,$wrap: false,$gap: 30px);
 }
+
+/* responsive */
+// desktop
+@media (max-width: 1201px){
+    
+}
+
+// taplet large
+@media (min-width: 992px) and (max-width: 1200.5px) {
+    .reative-team {
+        width: 952px;
+    }
+    .reative-team .profile {
+        width: 296px;
+    }
+    .reative-team .profile__info-name {
+        font-size: 25px;
+    }
+    .reative-team .profile__info-position {
+        font-size: 18px;
+    }
+    .reative-team .profile__info-text {
+        width: 292px;
+    }
+    .reative-team .profile__social {
+        gap: 25px;
+    }
+}
+
+// tablet mini
+@media (min-width: 768px) and (max-width: 991.5px) {
+    .reative-team {
+        width: 688px;
+        height: 622px;
+    }
+    .reative-team__heading .saction-heading {
+        margin-bottom: 18px;
+    }
+    .reative-team__heading .saction-text {
+        margin-bottom: 32px;
+        width: 450px;
+        height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .reative-team .profile {
+        width: 213px;
+        height: 453px;
+    }
+    .reative-team .profile__info {
+        bottom: 84px;
+    }
+    .reative-team .profile__social {
+        bottom: 30px;
+    }
+    .reative-team .profile__info-name {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    .reative-team .profile__info-position {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .reative-team .profile__info-text {
+        width: 158px;
+        height: 69px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .reative-team .profile__avarta-frame {
+        top: 30px;
+        width: 178px;
+        height: 178px;
+    }
+    .reative-team .profile__avarta-img {
+        top: 39px;
+        width: 160px;
+        height: 160px;
+    }
+    .reative-team .profile__social {
+        gap: 14px;
+    }
+}
+
+// mobile
+@media  (max-width: 767.5px) {
+    .reative-team {
+        margin-bottom: 60px;
+        width: 100%;
+        height: auto;
+    }
+    .reative-team__heading .saction-heading {
+        margin-top: 60px;
+        margin-bottom: 18px;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .reative-team__heading .saction-text {
+        margin-bottom: 40px;
+        width: 300px;
+        height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .reative-team__members {
+        flex-direction: column;
+    }
+    .reative-team .profile {
+        width: 343px;
+        height: 580px;
+    }
+    .reative-team .profile__info {
+        bottom: 106px;
+    }
+    .reative-team .profile__social {
+        bottom: 53px;
+    }
+    .reative-team .profile__info-text {
+        width: 313px;
+        height: 72px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .reative-team .profile__avarta-frame {
+        top: 29px;
+        width: 220px;
+        height: 220px;
+    }
+    .reative-team .profile__avarta-img {
+        top: 40px;
+        width: 198px;
+        height: 198px;
+    }
+    .reative-team .profile__social {
+        gap: 31px;
+    }
+} 

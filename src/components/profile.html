@@ -2,9 +2,8 @@
 <each loop="item in {{ list }}">
     <div class="profile">
         <div class="profile__avarta">
-            <div class="profile__avarta-frame">
-                <img src="{{item.avarta}}" alt="{{item.name}}" class="profile__avarta-img">
-            </div>
+            <img src="../assets/icons/profile-frame.svg" alt="" class="profile__avarta-frame">
+            <img src="{{item.avarta}}" alt="{{item.name}}" class="profile__avarta-img">
         </div>
 
         <div class="profile__info">
