@@ -13,6 +13,9 @@
     @include flex($display: flex,$direction: false,$align: start,
     $justify: space-between,$wrap: false,$gap: 66px);
 }
+.footer__logo {
+    position: relative;
+}
 .footer__logo-title {
     height: 48px;
     @include font($font-family:$primary-font,$font-size: 31.25px,$font-weight:700,$font-style:normal,$line-height: 47.25px,$color:$color-white);
@@ -27,6 +30,9 @@
 }
 .footer__logo .profile__social {
     justify-content: start;
+    bottom: 0;
+    left: 0;
+    transform: none;
 }
 .footer__logo .profile__social .profile__social-icon {
     filter: invert(0);
@@ -141,3 +147,218 @@
 .footer__contact-text {
     @include font($font-family:$primary-font,$font-size: 25px,$font-weight:600,$font-style:normal,$line-height: 37.5px,$color: $text-color-primary);
 }
+
+/* responsive */
+// desktop
+@media (min-width: 1201px){
+    
+}
+
+// taplet large
+@media (min-width: 992px) and (max-width: 1200.5px) {
+    .footer {
+        height: 438px;
+    }
+    .footer__content {
+        width: 952px;
+        height: 182px;
+        margin: 135px auto 62px;
+    }
+    .footer__logo {
+        width: 225px;
+        height: 100%;
+    }
+    .footer__logo-para {
+        margin-top: 7px;
+        margin-bottom: 30px;
+        width: 213px;
+        height: 72px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .footer__logo .profile__social {
+        justify-content: start;
+        gap: 20px;
+        bottom: 0;
+        left: 0;
+        transform: none;
+    }
+    .footer__quick-link {
+        width: 250px;
+        gap: 13px;
+    }
+    .footer__news-letter {
+        width: 269px;
+    }
+    .footer__quick-link__title,
+    .footer__news-letter__title {
+        margin-top: 2px;
+    }
+    .footer__news-letter__para {
+        width: 213px;
+        margin: 11px 0 33px;
+    }
+    .footer__news-letter__input {
+        width: 213px;
+        height: 50px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+    }
+    .footer__copyright {
+        width: 952px;
+    }
+    .footer__contact {
+        width: 952px;
+    }
+}
+
+// tablet mini
+@media (min-width: 768px) and (max-width: 991.5px) {
+    .footer {
+        height: 438px;
+    }
+    .footer__content {
+        width: 688px;
+        height: 180px;
+        margin: 135px auto 62px;
+        gap: 24px;
+    }
+    .footer__logo {
+        width: 225px;
+        height: 100%;
+    }
+    .footer__logo-para {
+        margin-top: 3px;
+        margin-bottom: 33px;
+        width: 213px;
+        height: 72px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .footer__logo .profile__social {
+        gap: 20px;
+        bottom: 0;
+        left: 0;
+        transform: none;
+    }
+    .footer__quick-link {
+        width: 202px;
+        gap: 13px;
+    }
+    .footer__news-letter {
+        width: 213px;
+    }
+    .footer__quick-link__title, .footer__news-letter__title {
+        margin-top: 8px;
+        font-size: 20px;
+        line-height: 30px;
+        height: 30px;
+    }
+    .footer__news-letter__para {
+        width: 213px;
+        margin: 11px 0 33px;
+    }
+    .footer__news-letter__input {
+        width: 157px;
+        height: 50px;
+    }
+    .footer__copyright {
+        width: 688px;
+    }
+    .footer__contact {
+        width: 688px;
+        height: 150px;
+    }
+    .footer__contact {
+        top: -75px;
+    }
+    .footer__contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .footer__contact-text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+// mobile
+@media  (max-width: 767.5px) {
+    .footer {
+        width: 100%;
+        height: 1010px;
+    }
+    .footer__content,
+    .footer__contact,
+    .footer__contact-mail,
+    .footer__contact-phone {
+        flex-direction: column;
+    }
+    .footer__content {
+        width: 334px;
+        height: 669px;
+        margin: 220px auto 60px;
+        gap: 60px;
+    }
+    .footer__logo {
+        position: relative;
+        height: 182px;
+    }
+    .footer__logo .profile__social {
+        bottom: 0;
+        left: 0;
+        transform: none;
+    }
+    .footer__quick-link,
+    .footer__news-letter {
+        width: 100%;
+    }
+    .footer__news-letter__input {
+        width: 287px;
+        height: 50px;
+    }
+    .footer__copyright {
+        width: 90%;
+    }
+    .footer__copyright-text {
+        font-size: 12.8px;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .footer__contact {
+        width: 342.762px;
+        height: 310px;
+    }
+    .footer__contact {
+        top: -150px;
+    }
+    .footer__contact-mail {
+        position: relative;
+    }
+    .footer__contact-mail::before {
+        position: absolute;
+        content: "";
+        width: 117px;
+        height: 4px;
+        background-color: $text-color-primary;
+        bottom: 0;
+    }
+    .footer__contact-mail,
+    .footer__contact-phone {
+        width: 200px;
+        height: 120px;
+        border: none;
+        margin: 30px auto 0;
+        gap: 20px;
+    }
+    .footer__contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .footer__contact-text {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+} 
