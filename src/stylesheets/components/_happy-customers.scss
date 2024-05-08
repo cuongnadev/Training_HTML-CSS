@@ -50,3 +50,167 @@
     right: 0;
     transform: translateY(-50%);
 }
+
+/* responsive */
+// desktop
+@media (min-width: 1201px){
+    
+}
+
+// taplet large
+@media (min-width: 992px) and (max-width: 1200.5px) {
+    .customers {
+        height: 827px;
+    }
+    .customers__sliders-img {
+        width: 952px;
+        height: 305px;
+    }
+    .business-card:nth-child(2) {
+        width: 550px;
+        height: 305px;
+    }
+    .business-card:first-child,
+    .business-card:last-child {
+        width: 550px;
+        height: 270px;
+    }
+    .customers__sliders-img .business-card__img {
+        width: 80px;
+        height: 80px;
+    }
+    .customers__sliders-img .business-card:first-child .business-card__img,
+    .customers__sliders-img .business-card:last-child .business-card__img  {
+        margin-top: 20px;
+    }
+    .business-card .business-card__name {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .business-card .business-card__position {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .customers__sliders-img .business-card .business-card__text {
+        width: 374px;
+        height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+// tablet mini
+@media (min-width: 768px) and (max-width: 991.5px) {
+    .customers {
+        height: 774px;
+    }
+    .customers__sliders-img {
+        width: 666px;
+        height: 250px;
+    }
+    .business-card:nth-child(2) {
+        width: 450px;
+        height: 250px;
+    }
+    .business-card:first-child,
+    .business-card:last-child {
+        width: 450px;
+        height: 210px;
+    }
+    .customers__sliders-img .business-card__img {
+        width: 50px;
+        height: 50px;
+        margin: 23px auto 12px auto;
+    }
+    .customers__sliders-img .business-card:first-child .business-card__img,
+    .customers__sliders-img .business-card:last-child .business-card__img  {
+        margin: 11px auto 12px auto;
+    }
+    .business-card .business-card__name {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .business-card .business-card__position {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .customers__sliders-img .business-card .business-card__text {
+        width: 374px;
+        height: 70px;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .customers__sliders-img .business-card:nth-child(2) .business-card__text {
+        margin-top: 10px;
+    }
+}
+
+// mobile
+@media  (max-width: 767.5px) {
+    .customers {
+        height: 590px;
+    }
+    .customers .saction-heading {
+        margin: 60px auto 18px auto;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .customers .saction-text{
+        margin-bottom: 32px;
+        width: 300px;
+        height: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .customers__sliders {
+        gap: 40px;
+    }
+    .customers__sliders-img {
+        width: 544px;
+        height: 250px;
+    }
+    .business-card:nth-child(2) {
+        width: 343px;
+        height: 250px;
+    }
+    .business-card:first-child,
+    .business-card:last-child {
+        width: 343px;
+        height: 215px;
+    }
+    .customers__sliders-img .business-card__img {
+        width: 50px;
+        height: 50px;
+        margin: 23px auto 12px auto;
+    }
+    .customers__sliders-img .business-card:first-child .business-card__img,
+    .customers__sliders-img .business-card:last-child .business-card__img  {
+        margin: 11px auto 12px auto;
+    }
+    .business-card .business-card__name {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 37.5px;
+    }
+    .business-card .business-card__position {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .customers__sliders-img .business-card .business-card__text {
+        width: 316px;
+        height: 70px;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .customers__sliders-img .business-card:nth-child(2) .business-card__text {
+        margin-top: 10px;
+    }
+} 
