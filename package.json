@@ -1,10 +1,11 @@
 {
   "name": "practice_html_css",
   "version": "1.0.0",
-  "main": "index.js",
+
   "scripts": {
+    "start": "node index.js",
     "dev": "parcel ./src/pages/index.html",
-    "build": "parcel build ./src/pages/index.html"
+    "build": "parcel build ./src/pages/index.html --dist-dir dist"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,6 @@
     "parcel-bundler": "^1.12.5",
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
-    "sass": "^1.74.1"
+    "sass": "^1.77.1"
   }
 }
