@@ -1,216 +1,203 @@
 @use '../abstracts/' as *;
 
 .customers {
-    padding-top: 1px;
+    padding-bottom: 120px;
     width: 100%;
-    height: 876px;
-    flex-shrink: 0;
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: center,$wrap: false,$gap: false);
     background: url(../assets/images/Rectangle-16.png);
-}
-.customers__heading .saction-heading,
-.customers__heading .saction-text {
-    color: $color-white;
-}
-.customers__sliders {
-    @include flex($display: flex,$direction: column,$align: center,
-    $justify: center,$wrap: false,$gap: 60px);
-}
-.customers__sliders-img {
-    position: relative;
-    width: 1171px;
-    height: 357px;
+    flex-shrink: 0;
+    &__heading {
+        & .saction-heading {
+            color: $color-white;
+        }
+        & .saction-text {
+            color: $color-white;
+        }
+        @include tablet-mini {
+            & .saction-text {
+                max-width: 450px;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        @include mobile {
+            & .saction-heading {
+                margin: 60px auto 18px auto;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 37.5px;
+            }
+            & .saction-text{
+                margin-bottom: 32px;
+                max-width: 300px;
+                height: 70px;
+            }
+        }
+    }
+    &__sliders {
+        @include flex($display: flex,$direction: column,$align: center,
+        $justify: center,$wrap: false,$gap: 60px);
+        &-img {
+            position: relative;
+            width: 100%;
+            height: 357px;
+            @include tablet-large {
+                height: 305px;
+                & .business-card__img {
+                    width: 80px;
+                    height: 80px;
+                    @include tablet-mini {
+                        width: 50px;
+                        height: 50px;
+                        margin: 23px auto 12px auto;
+                    }
+                }
+                & .business-card:first-child .business-card__img,
+                & .business-card:last-child .business-card__img  {
+                    margin-top: 20px;
+                    @include tablet-mini {
+                        margin: 11px auto 12px auto;
+                    }
+                }
+                & .business-card .business-card__text {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include tablet-mini {
+                        margin: 0;
+                    }
+                }
+            }
+            @include tablet-mini {
+                height: 250px;
+                & .business-card:nth-child(2) .business-card__text {
+                    margin-top: 10px;
+                }
+            }
+            @include mobile {
+                max-width: 544px;
+                width: 100%;
+            }
+        }
+        @include mobile {
+            gap: 40px;
+        }
+    }
+    @include mobile {
+        padding-bottom: 60px;
+    }
 }
 .business-card {
     position: absolute;
-}
-.business-card:nth-child(2) {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-.business-card:first-child,
-.business-card:last-child {
-    position: absolute;
-    width: 570px;
-    height: 330px;
-}
-.business-card:first-child .business-card__text,
-.business-card:last-child .business-card__text {
-    width: 495px;
-    height: 64px;
-}
-.business-card:first-child {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-.business-card:last-child {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
-
-/* responsive */
-// desktop
-@media (min-width: 1201px){
-    
-}
-
-// taplet large
-@media (min-width: 992px) and (max-width: 1200.5px) {
-    .customers {
-        height: 827px;
+    &:nth-child(2) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        & .business-card__text {
+            @include tablet-large {
+                max-width: 495px;
+                width: 100%;
+                height: 64px;
+            }
+            @include tablet-mini {
+                max-width: 374px;
+                height: 70px;
+            }
+            @include mobile {
+                max-width: 316px;
+            }
+        }
+        @include tablet-large {
+            max-width: 550px;
+            width: 100%;
+            height: 305px;
+        }
+        @include tablet-mini {
+            max-width: 450px;
+            height: 250px;
+        }
+        @include mobile {
+            max-width: 343px;
+        }
     }
-    .customers__sliders-img {
-        width: 952px;
-        height: 305px;
+    &:first-child {
+        max-width: 570px;
+        width: 100%;
+        height: 330px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        & .business-card__text {
+            max-width: 495px;
+            width: 100%;
+            height: 64px;
+            @include tablet-mini {
+                max-width: 374px;
+                height: 70px;
+            }
+            @include mobile {
+                max-width: 316px;
+            }
+        }
+        @include tablet-large {
+            max-width: 550px;
+            height: 270px;
+        }
+        @include tablet-mini {
+            max-width: 450px;
+            height: 210px;
+        }
+        @include mobile {
+            max-width: 343px;
+            height: 215px;
+        }
     }
-    .business-card:nth-child(2) {
-        width: 550px;
-        height: 305px;
+    &:last-child {
+        max-width: 570px;
+        width: 100%;
+        height: 330px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        & .business-card__text {
+            max-width: 495px;
+            width: 100%;
+            height: 64px;
+            @include tablet-mini {
+                max-width: 374px;
+                height: 70px;
+            }
+            @include mobile {
+                max-width: 316px;
+            }
+        }
+        @include tablet-large {
+            max-width: 550px;
+            height: 270px;
+        }
+        @include tablet-mini {
+            max-width: 450px;
+            height: 210px;
+        }
+        @include mobile {
+            max-width: 343px;
+            height: 215px;
+        }
     }
-    .business-card:first-child,
-    .business-card:last-child {
-        width: 550px;
-        height: 270px;
-    }
-    .customers__sliders-img .business-card__img {
-        width: 80px;
-        height: 80px;
-    }
-    .customers__sliders-img .business-card:first-child .business-card__img,
-    .customers__sliders-img .business-card:last-child .business-card__img  {
-        margin-top: 20px;
-    }
-    .business-card .business-card__name {
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 37.5px;
-    }
-    .business-card .business-card__position {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    .customers__sliders-img .business-card .business-card__text {
-        width: 374px;
-        height: 70px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}
-
-// tablet mini
-@media (min-width: 768px) and (max-width: 991.5px) {
-    .customers {
-        height: 774px;
-    }
-    .customers__sliders-img {
-        width: 666px;
-        height: 250px;
-    }
-    .business-card:nth-child(2) {
-        width: 450px;
-        height: 250px;
-    }
-    .business-card:first-child,
-    .business-card:last-child {
-        width: 450px;
-        height: 210px;
-    }
-    .customers__sliders-img .business-card__img {
-        width: 50px;
-        height: 50px;
-        margin: 23px auto 12px auto;
-    }
-    .customers__sliders-img .business-card:first-child .business-card__img,
-    .customers__sliders-img .business-card:last-child .business-card__img  {
-        margin: 11px auto 12px auto;
-    }
-    .business-card .business-card__name {
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 37.5px;
-    }
-    .business-card .business-card__position {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    .customers__sliders-img .business-card .business-card__text {
-        width: 374px;
-        height: 70px;
-        margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .customers__sliders-img .business-card:nth-child(2) .business-card__text {
-        margin-top: 10px;
+    @include tablet-large {
+        & .business-card__name {
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 37.5px;
+        }
+        & .business-card__position {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
     }
 }
-
-// mobile
-@media  (max-width: 767.5px) {
-    .customers {
-        height: 590px;
-    }
-    .customers .saction-heading {
-        margin: 60px auto 18px auto;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 37.5px;
-    }
-    .customers .saction-text{
-        margin-bottom: 32px;
-        width: 300px;
-        height: 70px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .customers__sliders {
-        gap: 40px;
-    }
-    .customers__sliders-img {
-        width: 544px;
-        height: 250px;
-    }
-    .business-card:nth-child(2) {
-        width: 343px;
-        height: 250px;
-    }
-    .business-card:first-child,
-    .business-card:last-child {
-        width: 343px;
-        height: 215px;
-    }
-    .customers__sliders-img .business-card__img {
-        width: 50px;
-        height: 50px;
-        margin: 23px auto 12px auto;
-    }
-    .customers__sliders-img .business-card:first-child .business-card__img,
-    .customers__sliders-img .business-card:last-child .business-card__img  {
-        margin: 11px auto 12px auto;
-    }
-    .business-card .business-card__name {
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 37.5px;
-    }
-    .business-card .business-card__position {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    .customers__sliders-img .business-card .business-card__text {
-        width: 316px;
-        height: 70px;
-        margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .customers__sliders-img .business-card:nth-child(2) .business-card__text {
-        margin-top: 10px;
-    }
-} 

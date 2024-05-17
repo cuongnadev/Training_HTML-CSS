@@ -94,14 +94,25 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  }
-  @mixin tablet {
-    @media (min-width:$mobiles) and (max-width: $tablet) {
+}
+
+@mixin desktop {
+    @media screen and (min-width: $extra-large) {
       @content;
     }
-  }
-  @mixin desktop {
-    @media screen and (min-width: $desktop) {
+}
+@mixin tablet-large {
+    @media screen and (max-width: $desktop) {
       @content;
     }
-  }
+}
+@mixin tablet-mini {
+    @media screen and (max-width: $tablet-mini) {
+      @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+      @content;
+    }
+}

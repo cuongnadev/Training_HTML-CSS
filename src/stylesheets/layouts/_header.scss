@@ -3,22 +3,41 @@
 /************* header *************/
 
 .header__container {
-    overflow: hidden; // note
-    @include flex($display: flex,$direction: column,$align: center,
-    $justify: start,$wrap: false,$gap: false);
     width: 100%;
     height: 1024px;
+    @include flex($display: flex,$direction: column,$align: center,
+    $justify: start,$wrap: false,$gap: false);
     background: url(../assets/images/background.png) ;
-    flex-shrink: 0;
+    &--content-container {
+        @include flex($display: flex,$direction: column,$align: center,
+        $justify: start,$wrap: false,$gap: 67px);
+        @include tablet-mini {
+            gap: 220px;
+        }
+        @include mobile {
+            gap: 118px;
+        }
+    }
+    overflow: hidden; // note
+    @include mobile {
+        height: 1227px;
+    }
 }
 .header__menu {
     @include flex($display: flex,$direction: column,$align: center,
     $justify: center,$wrap: false,$gap: false);
-    width: 1170px;
+    width: 100%;
     height: 114px;
-    flex-shrink: 0;
     margin-top: 35px;
     transition: 0.1s linear;
+    @include tablet-mini {
+        margin-top: 25px;
+        height: 134px;
+    }
+    @include mobile {
+        margin-top: 0;
+        height: 90px;
+    }
 }
 .header__top {
     @include flex($display: flex,$direction: false,$align: false,
@@ -29,16 +48,21 @@
 .menu__contact {
     @include flex($display: flex,$direction: false,$align: false,
     $justify: false,$wrap: false,$gap: 30px);
-}
-.menu__contact--email,
-.menu__contact--call {
-    @include flex($display: flex,$direction: false,$align: center,
-    $justify: center,$wrap: false,$gap: 10px);
-}
-.menu__contact--icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
+    &--email, &--call {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 10px);
+        @include mobile {
+            display: none;
+        }
+    }
+    &--icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+    &--text {
+        @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$color-white);
+    }
 }
 .menu__nav--logo:hover img,
 .menu__contact--icon:hover {
@@ -50,14 +74,14 @@
     cursor: pointer;
     opacity: 0.8;
 }
-.menu__contact--text {
-    @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$color-white);
-}
 .menu__social {
     @include flex( $display: flex,$direction: false,$align: center,
         $justify: center,$wrap: false,$gap: 15px
     ) ;
     flex-shrink: 0;
+    @include mobile {
+        display: none;
+    }
 }
 
 .menu__nav {
@@ -65,333 +89,274 @@
     width: 100%;    
     height: 90px;
     flex-shrink: 0;
-}
-.menu__nav--menu {
-    width: 100%;
-}
-.menu__nav--logo {
-    @include flex( $display: flex,$direction: false,$align: center,
-        $justify: center,$wrap: false,$gap: false
-    ) ;
-    background-color: $color-white;
-    border-radius: 5px;
-    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
-    width: 200px;
-    height: 90px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-.menu__nav--menu {
-    @include flex( $display: flex,$direction: false,$align: center,
-        $justify: space-between,$wrap: false,$gap: false
-    ) ;
-    width: 100%;
-    position: absolute;
-    top: 15px;
-    height: 60px;
-    border-radius: 5px;
-    background: $color-white;
-    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
-}
-.menu__nav--groups-lists {
-    height: 26px;
-    @include flex( $display: flex,$direction: false,$align: false,
-        $justify: space-between,$wrap: false,$gap: false
-    ) ;
-    flex: 1;
+    &--menu {
+        width: 100%;
+        height: 60px;
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: false) ;
+        position: absolute;
+        top: 15px;
+        border-radius: 5px;
+        background: $color-white;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+        @include mobile {
+            height: 40px;
+        }
+    }
+    &--logo {
+        max-width: 200px;
+        width: 100%;
+        height: 90px;
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: false) ;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: $color-white;
+        border-radius: 5px;
+        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @include mobile {
+            max-width: 100px;
+            width: 100%;
+            height: 60px;
+            &-img {
+                max-width: 79px;
+                width: 100%;
+                height: 12px;
+            }
+        }
+    }
+    &--groups-lists {
+        height: 26px;
+        @include flex( $display: flex,$direction: false,$align: false,
+            $justify: space-between,$wrap: false,$gap: false
+        ) ;
+        flex: 1;
+    }
+    &--list {
+        @include flex( $display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: 40px) ;
+        &:first-child {
+            margin-left: 52px;
+        }
+        &:last-child {
+            margin-right: 43px;
+        }
+        @include tablet-large {
+            display: none;
+        }
+    }
+    &--item {
+        width: 100%;
+        height: 100%;
+        & a {
+            @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$text-color-primary);
+            height: 100%;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        &:hover a {
+            color: $color-primary;
+            text-decoration-line: underline;
+        }
+    }
+    @include tablet-mini {
+        margin-top: 20px;
+    }
+    @include mobile {
+        margin-top: 0px;
+        height: 70px;
+    }
 }
 .menu-bar {
     margin-left: 18px;
+    &:hover {
+        transform: scale(1.1);
+    }
+    @include desktop{
+        display: none;
+    }
+    @include mobile {
+        margin-left: 8px;
+    }
 }
-.menu-bar:hover {
-    transform: scale(1.1);
-}
-.menu__nav--list {
-    @include flex( $display: flex,$direction: false,$align: center,
-        $justify: space-between,$wrap: false,$gap: 40px
-    ) ;
-}
-.menu__nav--list:first-child {
-    margin-left: 52px;
-}
-.menu__nav--list:last-child {
-    margin-right: 43px;
-}
-.menu__nav--item {
-    width: 100%;
-    height: 100%;
-}
-.menu__nav--item a {
-    @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$text-color-primary);
-    height: 100%;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.menu__nav--item:hover a {
-    color: $color-primary;
-    text-decoration-line: underline;
-}
-
 .menu__button--download {
     @include button($width:158px,$height:50px,$background-color:$color-primary,$border-radius:5px,$border:none);
     flex-shrink: 0;
     margin-right: 5px;
+    &:hover {
+        background: linear-gradient(to bottom, $color-primary, #4a49d2);
+        transform: scale(1.01); 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    & h6 {
+        @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$color-white);
+        text-transform: uppercase;
+    }
+    @include mobile {
+        max-width: 76px;
+        width: 100%;
+        height: 34px;
+        margin-right: 4px;
+        & h6 {
+            font-size: 10px;
+        }
+    }
 }
-.menu__button--download:hover {
-    background: linear-gradient(to bottom, $color-primary, #4a49d2);
-    transform: scale(1.01); 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-.menu__button--download h6 {
-    @include font($font-family:$primary-font,$font-size:20px,$font-weight:600,$font-style:normal,$line-height:30px,$color:$color-white);
-    text-transform: uppercase;
-}
-
 .header__hero {
-    width: 1170px;
+    width: 100%;
     @include flex( $display: flex,$direction: false,$align: center,
-        $justify: space-between,$wrap: false,$gap: false
-    ) ;
-    margin-top: 82px;
+        $justify: space-between,$wrap: false,$gap: false);
+    @include mobile {
+        width: 50%;
+        @include flex( $display: flex,$direction: column,$align: center,
+            $justify: center,$wrap: false,$gap: 60px);
+    }
 }
 .hero__text {
     position: relative;
+    @include mobile {
+        transform: translateX(-10px);
+    }
 }
 .hero__upper-frame {
-    position: relative;
     width: 570px;
     height: 432px;
-    background: $color-white;
+    position: relative;
     flex-shrink: 0;
+    background: $color-white;
     z-index: 1;
+    @include tablet-large {
+        width: 486px;
+        height: 396px;
+    }
+    @include tablet-mini {
+        width: 356px;
+        height: 318px;
+    }
+    @include mobile {
+        width: 323px;
+    }
 }
 .hero__lower-frame {
+    width: 570px;
+    height: 535px;
     position: absolute;
     top: -51px;
     right: -50px;
-    width: 570px;
-    height: 535px;
     border: 18px solid #7572FF;
     flex-shrink: 0;
-}
-.hero__title {
-    padding-top: 40px;
-    margin: 0 0 18px 30px;
-    @include font($font-family:$primary-font,$font-size:48.83px,$font-weight:700,$font-style:normal,$line-height:130%,$color:$color-primary);
-    text-transform: uppercase;
-}
-.hero__para {
-    margin: 0 0 52px 30px;
-    width: 487px;
-    height: 66px;
-    @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$text-color-gray);
-    flex-shrink: 0;
-}
-.hero__sub-title {
-    margin: 0 0 0 30px;
-    @include font($font-family:$primary-font,$font-size:25px,$font-weight:600,$font-style:normal,$line-height:37.5px,$color:$text-color-primary);
-    text-transform: uppercase;
-}
-.hero__download {
-    margin-left: 30px;
-    @include flex( $display: flex,$direction: false,$align: center,
-        $justify: false,$wrap: false,$gap: 14px
-    ) ;
-}
-.hero__download--chplay:hover,
-.hero__download--appstore:hover {
-    transform: scale(1.05);
-}
-.hero__img {
-    transform: translateX(124px);
-} 
-// desktop
-@media (min-width: 1201px){
-    .menu-bar {
-        display: none;
-    }
-}
-
-// taplet large
-@media (min-width: 992px) and (max-width: 1200.5px) {
-    .header__menu,
-    .header__hero {
-        width: 952px;
-    }
-    .menu__nav--list {
-        display: none;
-    }
-    .hero__upper-frame, 
-    .hero__lower-frame,
-    .hero__img {
+    @include tablet-large {
         width: 496px;
-    }
-    .hero__upper-frame {
-        height: 396px;
-    }
-    .hero__lower-frame {
         top: -40px;
         right: -40px;
         height: 475px;
     }
-    .hero__title {
-        font-size: 31.25px;
-        line-height: 47.25px;
-    }
-    .hero__para {
-        width: 430px;
-    }
-}
-
-// tablet mini
-@media (min-width: 768px) and (max-width: 991.5px) {
-    .header__menu,
-    .header__hero {
-        width: 668px;
-    }
-    .menu__nav {
-        margin-top: 20px;
-    }
-    .menu__nav--list {
-        display: none;
-    }
-    .hero__upper-frame {
-        width: 356px;
-        height: 318px;
-    }
-    .hero__lower-frame {
+    @include tablet-mini {
         width: 375px;
         height: 381px;
         top: -32px;
         right: -32px;
     }
-    .hero__title {
-        margin: 0 0 0 18px;
-        padding-top: 14px;
-        font-size: 31.25px;
-        line-height: 47.25px;
-    }
-    .hero__para {
-        margin: 6px auto 23px 18px;
-        width: 330px;
-        height: 92px;
-    }
-    .hero__sub-title {
-        margin-left: 18px;
-        margin-bottom: 5px;
-        font-size: 20px;
-        line-height: 30px;
-    }
-    .hero__download {
-        margin-left: 18px;
-    }
-    .header__hero {
-        margin-top: 220px;
-    }
-    .hero__img {
-        width: 378px;
-        height: 423px;
-        transform: translateX(90px);
-    } 
-}
-
-// mobile
-@media  (max-width: 767.5px) {
-    .header__container {
-        height: 1227px;
-    }
-    .header__menu,
-    .header__hero {
-        width: 343px;
-    }
-    .header__menu {
-        margin-top: -5px;
-    }
-    .header__hero {
-        @include flex( $display: flex,$direction: column,$align: start,
-            $justify: center,$wrap: false,$gap: 60px
-        ) ;
-    }
-    .menu__nav {
-        height: 70px;
-    }
-    .menu__nav--menu {
-        height: 40px;
-    }
-    .menu-bar {
-        margin-left: 8px;
-    }
-    .menu__nav--list,
-    .menu__contact--email,
-    .menu__contact--call,
-    .menu__social {
-        display: none;
-    }
-    .menu__nav--logo {
-        width: 100px;
-        height: 60px;
-    }
-    .menu__nav--logo-img {
-        width: 79px;
-        height: 12px;
-    }
-    .menu__button--download {
-        width: 76px;
-        height: 34px;
-        margin-right: 4px;
-    }
-    .menu__button--download h6 {
-        font-size: 10px;
-    }
-    .hero__upper-frame {
-        width: 323px;
-        height: 318px;
-   
-    }
-    .hero__lower-frame {
+    @include mobile {
         width: 323px;
         height: 358px;
         top: -20px;
         right: -20px;
         border: 10px solid #7572FF;
     }
-    .hero__title {
-        width: 262px;
-        height: 78px;
-        margin: 0 0 0 18px;
-        padding-top: 14px;
+}
+.hero__title {
+    padding: 40px 0 18px 30px;
+    @include font($font-family:$primary-font,$font-size:48.83px,$font-weight:700,$font-style:normal,$line-height:130%,$color:$color-primary);
+    text-transform: uppercase;
+    @include tablet-large {
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    @include tablet-mini {
+        padding: 14px 0 0 18px;
+        font-size: 31.25px;
+        line-height: 47.25px;
+    }
+    @include mobile {
+        padding: 30px 0 0 18px;
+        width: 278px;
+        height: 94px;
         font-size: 25px;
         font-weight: 600;
         line-height: 37.5px;
     }
-    .hero__para {
-        margin: 10px auto 20px 18px;
-        width: 293px;
-        height: 114px;
+}
+.hero__para {
+    max-width: 487px;
+    width: 100%;
+    height: 66px;
+    margin: 0 0 52px 30px;
+    @include font($font-family:$primary-font,$font-size:16px,$font-weight:400,$font-style:normal,$line-height:24px,$color:$text-color-gray);
+    flex-shrink: 0;
+    @include tablet-large {
+        width: 430px;
     }
-    .hero__sub-title {
-        margin: 0 0 18px 18px;
+    @include tablet-mini {
+        margin: 6px auto 23px 18px;
+        width: 330px;
+        height: 66px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    @include mobile {
+        margin: 18px auto 30px 18px;
+        width: 293px;
+    }
+}
+.hero__sub-title {
+    margin: 0 0 0 30px;
+    @include font($font-family:$primary-font,$font-size:25px,$font-weight:600,$font-style:normal,$line-height:37.5px,$color:$text-color-primary);
+    text-transform: uppercase;
+    @include tablet-mini {
+        margin-left: 18px;
+        margin-bottom: 23px;
         font-size: 20px;
         line-height: 30px;
     }
-    .hero__download {
+    @include mobile {
+        margin: 0 0 20px 18px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+.hero__download {
+    margin-left: 30px;
+    @include flex( $display: flex,$direction: false,$align: center,
+        $justify: false,$wrap: false,$gap: 14px
+    ) ;
+    &--chplay:hover,
+    &--appstore:hover {
+        transform: scale(1.05);
+    }
+    @include tablet-mini {
         margin-left: 18px;
     }
-    .hero__download--chplay,
-    .hero__download--appstore {
-        width: 108.191px;
-        height: 34.127px;
+    @include mobile {
+        margin-left: 18px;
+        &--chplay,
+        &--appstore {
+            width: 108.191px;
+            height: 34.127px;
+        }
     }
-    .header__hero {
-        margin-top: 98px;
+}
+.hero__img {
+    @include tablet-large {
+        width: 30%;
+        height: 100%;
     }
-    .hero__img {
-        width: 443px;
+    @include mobile {
+        width: 265px;
         height: 521px;
-        transform: translateX(22px);
-    } 
+    }
 }
     
