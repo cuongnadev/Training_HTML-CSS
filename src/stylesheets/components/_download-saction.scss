@@ -1,269 +1,235 @@
 @use '../abstracts/' as *;
 .download-app {
-    margin: 0 auto 120px auto;
-    width: 1166px;
-    height: 506px;
-    @include flex($display: flex,$direction: false,$align: center,
-    $justify: space-between,$wrap: false,$gap: 80px);
-}
-.download-app__main {
-    height: 100%;
-}
-.download-app__heading .saction-heading,
-.download-app__heading .saction-text{
-    text-align: start;
-}
-.download-app__heading .saction-heading {
-    margin-top: 17px;
-}
-.download-app__heading .saction-text {
-    margin-bottom: 40px;
-    width: 570px;
-    height: 87px;
-    flex-shrink: 0;
-}
-.download-app__img--top {
-    width: 516px;
-    height: 480px;
-    flex-shrink: 0;
-    object-fit: cover;
-}
-.download-app__links {
-    @include flex($display: flex,$direction: false,$align: center,
-    $justify: start,$wrap: false,$gap: 25px);
-    margin-bottom: 59px;
-}
-.download-app__interactions {
-    @include flex($display: flex,$direction: false,$align: center,
-    $justify: start,$wrap: false,$gap: 30px);
-}
-.download-app__interaction-item {
-    background-color: $color-primary;
-    width: 170px;
-    height: 176px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
-}
-.download-app__img {
-    width: 516px;
-    height: 100%;
-    position: relative;
-}
-.download-app__img--top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.download-app__img--bottom {
-    width: 212px;
-    height: 71px;
-    position: absolute;
-    bottom: -4px;
-    left: 44%;
-    transform: translateX(-50%);
-    fill: var(--White, #FFF);
-    filter: drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.10));
-}
-.download-app__interaction-item {
-    @include flex($display: flex,$direction: column,$align: center,
-    $justify: center,$wrap: false,$gap: 18px);
-}
-.download-app__interaction-icon {
-    width: 35px;
-    height: 35px;
-    flex-shrink: 0;
-}
-.download-app__interaction-icon:hover,
-.download-app__link-item:hover {
-    transform: scale(1.05);
-}
-.download-app__interaction-quantity {
-    @include font($font-family:$primary-font,$font-size: 25px,$font-weight:600,$font-style:normal,$line-height: normal,$color:$color-white);
-    text-transform: uppercase;
-}
-.download-app__interaction-title {
-    @include font($font-family:$primary-font,$font-size: 20px,$font-weight:600,$font-style:normal,$line-height: 30px,$color:$color-white);
-    text-transform: uppercase;
-}
-
-/* responsive */
-// desktop
-@media (max-width: 1201px){
-    
-}
-
-// taplet large
-@media (min-width: 992px) and (max-width: 1200.5px) {
-    .download-app {
-        width: 952px;
-        height: 447px;
+    padding-bottom: 120px;
+    width: 100%;
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: center,$wrap: false,$gap: false);
+    & .content-container {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: space-between,$wrap: false,$gap: 80px);
+        @include tablet-mini {
+            max-width: 688px;
+            gap: 28px;
+        }
+        @include mobile {
+            height: 797px;
+            flex-direction: column;
+            gap: 60px;
+        }
     }
-    .download-app__heading .saction-heading {
-        width: 358px;
+    &__main {
+        width: 100%;
+        height: 100%;
+        @include mobile{
+            max-width: 325.02px;
+        }
+    }
+    &__img {
+        max-width: 516px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &--top {
+            width: 100%;
+            height: 480px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-shrink: 0;
+            object-fit: fill;
+            z-index: 1;
+            @include tablet-large {
+                height: 442px;
+            }
+            @include tablet-mini {
+                height: 311.146px;
+                top: 82px;
+            }
+            @include mobile {
+                top: 0;
+            }
+        }
+        &--bottom {
+            max-width: 212px;
+            width: 100%;
+            height: 71px;
+            position: absolute;
+            bottom: -5px;
+            left: 44%;
+            transform: translateX(-50%);
+            fill: var(--White, #FFF);
+            filter: drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.10));
+            @include tablet-large {
+                bottom: -15px;
+                left: 44%;
+            }
+            @include tablet-mini {
+                bottom: -8px;
+                left: 44%;
+            }
+            @include mobile {
+                left: 46%;
+            }
+        }
+        @include tablet-large {
+            max-width: 474px;
+        }
+        @include tablet-mini {
+            max-width: 334.482px;
+        }
+    }
+    &__interactions {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: start,$wrap: false,$gap: 30px);
+        @include tablet-mini {
+            gap: 18px;
+        }
+        @include mobile {
+            max-width: 325px;
+            width: 100%;
+        }
+    }
+    &__interaction {
+        &-item {
+            max-width: 170px;
+            width: 100%;
+            height: 176px;
+            @include flex($display: flex,$direction: column,$align: center,
+            $justify: center,$wrap: false,$gap: 18px);
+            border-radius: 10px;
+            box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
+            background-color: $color-primary;
+            flex-shrink: 0;
+            @include tablet-large {
+                max-width: 135px;
+                width: 100%;
+                height: 145px;
+                gap: 8px;
+            }
+            @include tablet-mini {
+                max-width: 96px;
+                width: 100%;
+                height: 100px;
+            }
+            @include mobile {
+                height: 95px;
+                flex: 1;
+            }
+        }
+        &-icon {
+            width: 35px;
+            height: 35px;
+            flex-shrink: 0;
+            &:hover{
+                transform: scale(1.05);
+            }
+            @include tablet-large {
+                width: 25px;
+                height: 25px;
+                margin-bottom: 4px;
+            }
+            @include tablet-mini {
+                width: 18px;
+                height: 18px;
+            }
+            @include tablet-mini {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        &-quantity {
+            @include font($font-family:$primary-font,$font-size: 25px,$font-weight:600,$font-style:normal,$line-height: normal,$color:$color-white);
+            text-transform: uppercase;
+            @include tablet-large {
+                font-size: 20px;
+                line-height: 30px;
+            }
+            @include tablet-mini {
+                line-height: 24px;
+            }
+            @include tablet-mini {
+                font-size: 20px;
+            }
+        }
+        &-title {
+            @include font($font-family:$primary-font,$font-size: 20px,$font-weight:600,$font-style:normal,$line-height: 30px,$color:$color-white);
+            text-transform: uppercase;
+            @include tablet-large {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+            @include tablet-mini {
+                font-size: 14px;
+                text-transform: capitalize;
+            }
+            @include tablet-mini {
+                font-size: 12px;
+            }
+        }
+    }
+    &__links {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: start,$wrap: false,$gap: 25px);
+        width: 100%;
+        margin-bottom: 59px;
+        @include tablet-mini {
+            margin-bottom: 40px;
+            & img {
+                max-width: 149px;
+                width: 45%;
+            }
+        }
+    }
+    &__link-item:hover {
+        transform: scale(1.05);
+    }
+    @include mobile {
+        padding-bottom: 60px;
+    }
+}
+.download-app__heading {
+    & .saction-heading {
         margin-top: 17px;
-        margin-left: 0;
+        text-align: start;
     }
-    .download-app__heading .saction-text {
-        margin-left: 0;
-        width: 329px;
-        height: 73px;
-        overflow: hidden;
-        text-overflow: ellipsis; 
+    & .saction-text{
+        text-align: start;
+        margin-bottom: 40px;
+        max-width: 570px;
+        height: 87px;
+        flex-shrink: 0;
     }
-    .download-app__interaction-item {
-        width: 135px;
-        height: 145px;
-        gap: 8px;
+    @include tablet-large {
+        & .saction-heading {
+            max-width: 358px;
+            width: 100%;
+            margin-left: 0;
+        }
+        & .saction-text{
+            margin-left: 0;
+            max-width: 329px;
+            height: 73px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
-    .download-app__interaction-icon {
-        width: 25px;
-        height: 25px;
-        margin-bottom: 4px;
+    @include tablet-mini {
+        margin-top: 0;
+        & .saction-heading {
+            margin-top: 0;
+            max-width: 288px;
+            width: 100%;
+            height: 95px;
+        }
+        & .saction-text {
+            margin-left: 0;
+            margin-bottom: 40px;
+        }
     }
-    .download-app__interaction-quantity {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 30px;
-    }
-    .download-app__interaction-title {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        text-transform: capitalize;
-    }
-    .download-app__img--top {
-        width: 443.482px;
-        height: 413.146px;
-    }
-    .download-app__img--top {
-        top: 20px;
-        left: -34px;
-    }
-    .download-app__img--bottom {
-        bottom: -10px;
-        left: 40%;
+    @include mobile {
+        & .saction-heading {
+            margin-bottom: 18px;
+        }
     }
 }
-
-// tablet mini
-@media (min-width: 768px) and (max-width: 991.5px) {
-    .download-app {
-        width: 687.482px;
-        height: 414px;
-    }
-    .download-app__heading {
-        margin-top: 0;
-    }
-    .download-app__heading .saction-heading {
-        margin-top: 0;
-        margin-left: 0;
-        width: 288px;
-        height: 95px;
-    }
-    .download-app__heading .saction-text {
-        margin-left: 0;
-        margin-bottom: 40px;
-        width: 329px;
-        height: 73px;
-        overflow: hidden;
-        text-overflow: ellipsis; 
-    }
-    .download-app__interaction-item {
-        width: 96px;
-        height: 100px;
-        gap: 8px;
-    }
-    .download-app__interaction-icon {
-        width: 18px;
-        height: 18px;
-        margin-bottom: 4px;
-    }
-    .download-app__interaction-quantity {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 24px;
-    }
-    .download-app__interaction-title {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        text-transform: capitalize;
-    }
-    .download-app__img--top {
-        width: 334.482px;
-        height: 311.146px;
-        top: 82px;
-        left: -72px;
-    }
-    .download-app__img--bottom {
-        bottom: -8px;
-        left: 30%;
-    }
-    .download-app__links {
-        margin-bottom: 40px;
-    }
-}
-
-// mobile
-@media  (max-width: 767.5px) {
-    .download-app {
-        margin-bottom: 60px;
-        flex-direction: column;
-        gap: 60px;
-        width: 338.482px;
-        height: 801px;
-    }
-    .download-app__heading {
-        margin-top: 0;
-    }
-    .download-app__heading .saction-heading {
-        margin-top: 0;
-        margin-left: 0;
-        margin-bottom: 18px;
-        width: 288px;
-        height: 95px;
-    }
-    .download-app__heading .saction-text {
-        margin-left: 0;
-        margin-bottom: 40px;
-        width: 329px;
-        height: 73px;
-        overflow: hidden;
-        text-overflow: ellipsis; 
-    }
-    .download-app__interaction-item {
-        width: 96px;
-        height: 100px;
-        gap: 8px;
-    }
-    .download-app__interaction-icon {
-        width: 18px;
-        height: 18px;
-        margin-bottom: 4px;
-    }
-    .download-app__interaction-quantity {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 24px;
-    }
-    .download-app__interaction-title {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        text-transform: capitalize;
-    }
-    .download-app__img--top {
-        width: 334.482px;
-        height: 311.146px;
-        left: 90px;
-    }
-    .download-app__img--bottom {
-        bottom: -8px;
-        left: 46%;
-    }
-    .download-app__links {
-        margin-bottom: 40px;
-    }
-} 

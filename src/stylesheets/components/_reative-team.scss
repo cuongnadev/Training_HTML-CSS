@@ -1,150 +1,128 @@
 @use '../abstracts/' as *;
 .reative-team {
-    margin: 0 auto 120px auto;
-    width: 1170px;
-    height: 781px;
+    width: 100%;
+    padding-top: 163px;
+    padding-bottom: 120px;
+    @include flex($display: flex,$direction: false,$align: false,
+    $justify: center,$wrap: false,$gap: false);
+    @include tablet-mini {
+        padding-top: 121px;
+    }
+    @include mobile {
+        padding-top: 74px;
+        padding-bottom: 60px;
+    }
+    &__members {
+        @include flex($display: flex,$direction: false,$align: center,
+        $justify: center,$wrap: false,$gap: 30px);
+    }
+    &__heading {
+        @include tablet-mini {
+            & .saction-heading {
+                margin-bottom: 18px;
+            }
+            & .saction-text {
+                margin-bottom: 32px;
+                max-width: 450px;
+                height: 70px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        @include mobile {
+            & .saction-heading {
+                margin-top: 60px;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 37.5px;
+            }
+            & .saction-text {
+                max-width: 300px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    @include tablet-large {
+        & .profile {
+            max-width: 296px;
+        }
+        & .profile__info-name {
+            font-size: 25px;
+        }
+        & .profile__info-position {
+            font-size: 18px;
+        }
+        & .profile__info-text {
+            max-width: 292px;
+        }
+    }
+    @include tablet-mini {
+        & .profile {
+            max-width: 213px;
+            height: 453px;
+        }
+        & .profile__info {
+            bottom: 84px;
+        }
+        & .profile__social {
+            bottom: 30px;
+        }
+        & .profile__info-name {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+        & .profile__info-position {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        & .profile__info-text {
+            max-width: 158px;
+            height: 69px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & .profile__avarta-frame {
+            top: 30px;
+            width: 178px;
+            height: 178px;
+        }
+        & .profile__avarta-img {
+            top: 39px;
+            width: 160px;
+            height: 160px;
+        }
+    }
+    @include mobile {
+        &__members {
+            flex-direction: column;
+        }
+        & .profile {
+            max-width: 343px;
+            height: 580px;
+        }
+        & .profile__info {
+            bottom: 106px;
+        }
+        & .profile__social {
+            bottom: 53px;
+        }
+        & .profile__info-text {
+            max-width: 313px;
+            height: 72px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & .profile__avarta-frame {
+            top: 29px;
+            width: 220px;
+            height: 220px;
+        }
+        & .profile__avarta-img {
+            top: 40px;
+            width: 198px;
+            height: 198px;
+        }
+    }
 }
-.reative-team__members {
-    @include flex($display: flex,$direction: false,$align: center,
-    $justify: center,$wrap: false,$gap: 30px);
-}
-
-/* responsive */
-// desktop
-@media (max-width: 1201px){
-    
-}
-
-// taplet large
-@media (min-width: 992px) and (max-width: 1200.5px) {
-    .reative-team {
-        width: 952px;
-    }
-    .reative-team .profile {
-        width: 296px;
-    }
-    .reative-team .profile__info-name {
-        font-size: 25px;
-    }
-    .reative-team .profile__info-position {
-        font-size: 18px;
-    }
-    .reative-team .profile__info-text {
-        width: 292px;
-    }
-    .reative-team .profile__social {
-        gap: 25px;
-    }
-}
-
-// tablet mini
-@media (min-width: 768px) and (max-width: 991.5px) {
-    .reative-team {
-        width: 688px;
-        height: 622px;
-    }
-    .reative-team__heading .saction-heading {
-        margin-bottom: 18px;
-    }
-    .reative-team__heading .saction-text {
-        margin-bottom: 32px;
-        width: 450px;
-        height: 70px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .reative-team .profile {
-        width: 213px;
-        height: 453px;
-    }
-    .reative-team .profile__info {
-        bottom: 84px;
-    }
-    .reative-team .profile__social {
-        bottom: 30px;
-    }
-    .reative-team .profile__info-name {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 30px;
-    }
-    .reative-team .profile__info-position {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-    }
-    .reative-team .profile__info-text {
-        width: 158px;
-        height: 69px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .reative-team .profile__avarta-frame {
-        top: 30px;
-        width: 178px;
-        height: 178px;
-    }
-    .reative-team .profile__avarta-img {
-        top: 39px;
-        width: 160px;
-        height: 160px;
-    }
-    .reative-team .profile__social {
-        gap: 14px;
-    }
-}
-
-// mobile
-@media  (max-width: 767.5px) {
-    .reative-team {
-        margin-bottom: 60px;
-        width: 100%;
-        height: auto;
-    }
-    .reative-team__heading .saction-heading {
-        margin-top: 60px;
-        margin-bottom: 18px;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 37.5px;
-    }
-    .reative-team__heading .saction-text {
-        margin-bottom: 40px;
-        width: 300px;
-        height: 70px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .reative-team__members {
-        flex-direction: column;
-    }
-    .reative-team .profile {
-        width: 343px;
-        height: 580px;
-    }
-    .reative-team .profile__info {
-        bottom: 106px;
-    }
-    .reative-team .profile__social {
-        bottom: 53px;
-    }
-    .reative-team .profile__info-text {
-        width: 313px;
-        height: 72px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .reative-team .profile__avarta-frame {
-        top: 29px;
-        width: 220px;
-        height: 220px;
-    }
-    .reative-team .profile__avarta-img {
-        top: 40px;
-        width: 198px;
-        height: 198px;
-    }
-    .reative-team .profile__social {
-        gap: 31px;
-    }
-} 
