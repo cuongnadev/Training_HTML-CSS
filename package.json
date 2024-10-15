@@ -1,7 +1,6 @@
 {
   "name": "practice_html_css",
   "version": "1.0.0",
-
   "scripts": {
     "start": "node index.js",
     "dev": "parcel ./src/pages/index.html",
@@ -18,5 +17,8 @@
     "posthtml-doctype": "^1.1.1",
     "posthtml-include": "^2.0.1",
     "sass": "^1.77.1"
+  },
+  "dependencies": {
+    "practice_html_css": "file:"
   }
 }
